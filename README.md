@@ -25,3 +25,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+<!-- Inicio proyecto -->
+
+## Init
+npm install -g pnpm
+ng new ng-task-18 --package-manager pnpm
+pnpm install ngx-sonner
+npm i @angular/fire
+
+## Crear servicio
+ng g s auth
+
+## Crear componente
+ng g c task-list -s
