@@ -5,6 +5,7 @@ import { AuthService } from '../../data-access/auth.service';
 import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
 import { FirebaseError } from '@angular/fire/app';
+import { GoogleButtonComponent } from '../../ui/google-button/google-button.component';
 
 interface FormSingUp{
   email : FormControl<string | null >;
@@ -14,7 +15,7 @@ interface FormSingUp{
 @Component({
   selector: 'app-sing-up',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, GoogleButtonComponent],
   templateUrl: './sing-up.component.html',
   styles: ``
 })
@@ -59,5 +60,18 @@ export default class SingUpComponent {
 
     // const email = this.form.get('email')?.value
 
+  }
+
+  async submitWithGoogle(){
+    try {
+      alert("inciando sesion con google");
+      await this._authService.signInWithGoogle();
+      toast.success('Bienvenido de nuevo');
+      this._router.navigateByUrl('/tasks');
+    } 
+    catch (error : FirebaseError | any) {
+      console.error(error);
+      toast.error(`ERROR: \n  ${ErrorAuthEnEs(error.code)}`);
+    }
   }
 }

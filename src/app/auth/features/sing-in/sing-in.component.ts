@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { ErrorAuthEnEs, hasEmailError, isRequired } from '../../utils/validator';
 import { toast } from 'ngx-sonner';
 import { FirebaseError } from '@angular/fire/app';
+import { GoogleButtonComponent } from '../../ui/google-button/google-button.component';
 
 
 interface FormSingIn{
@@ -15,7 +16,7 @@ interface FormSingIn{
 @Component({
   selector: 'app-sing-in',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, GoogleButtonComponent],
   templateUrl: './sing-in.component.html',
   styles: ``
 })
@@ -62,4 +63,16 @@ export default class SingInComponent {
 
   }
 
+  async submitWithGoogle(){
+    try {
+      alert("inciando sesion con google");
+      await this._authService.signInWithGoogle();
+      toast.success('Bienvenido de nuevo');
+      this._router.navigateByUrl('/tasks');
+    } 
+    catch (error : FirebaseError | any) {
+      console.error(error);
+      toast.error(`ERROR: \n  ${ErrorAuthEnEs(error.code)}`);
+    }
+  }
 }
