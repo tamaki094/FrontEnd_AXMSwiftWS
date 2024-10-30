@@ -40,3 +40,11 @@ ng g s auth
 
 ## Crear componente
 ng g c task-list -s
+
+
+## Generacion de componentes y servicios
+ng g s operacion --skip-tests=true
+ng generate component TransfInternacional --skip-tests=true
+ng generate component ConsultaOperaciones --skip-tests=true
+ng generate component Operacion --skip-tests=true
+ng generate interface TransfInternacionalModel --skip-tests=true
