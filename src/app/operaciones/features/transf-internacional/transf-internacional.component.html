@@ -1,0 +1,183 @@
+
+
+
+
+<section class="mx-auto w-full max-w-screen-sm"> 
+    <div>
+        <textarea id="json_text" name="json_text" style="width: 600px;" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+        <button class="w-full text-white bg-primary-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-primary-800" (click)="JsonToForm()" (dblclick)="JsonPretty($event)">Convertir JSON</button>
+    </div>
+    <form class="space-y-4 md:space-y-6" action="#" [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+            <label for="idMessage" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Id Message</label>
+            <input type="text" name="idMessage" id="idMessage" formControlName="idMessage" placeholder="identificador del mensaje" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+        <div>
+            <label for="senderHeader" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Header</label>
+            <input type="text" name="senderHeader" id="senderHeader" formControlName="senderHeader" placeholder="encabezado del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="accountHeader" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Account Header</label>
+            <input type="text" name="accountHeader" id="accountHeader" formControlName="accountHeader" placeholder="cuenta del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="bankOperationCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Bank Operation Code</label>
+            <input type="text" name="bankOperationCode" id="bankOperationCode" formControlName="bankOperationCode" placeholder="Código de operación bancaria" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="amountInformation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount Information</label>
+            <input type="text" name="amountInformation" id="amountInformation" formControlName="amountInformation" placeholder="Información de cantidad" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderAccount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Account</label>
+            <input type="text" name="senderAccount" id="senderAccount" formControlName="senderAccount" placeholder="Cuenta del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Name</label>
+            <input type="text" name="senderName" id="senderName" formControlName="senderName" placeholder="Nombre del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderMainAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Main Address</label>
+            <input type="text" name="senderMainAddress" id="senderMainAddress" formControlName="senderMainAddress" placeholder="Dirección principal del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>  
+
+        <div>
+            <label for="senderAddressStreet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Main Address Street</label>
+            <input type="text" name="senderAddressStreet" id="senderAddressStreet" formControlName="senderAddressStreet" placeholder="Calle del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div> 
+
+        <div>
+            <label for="senderAddressZone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+            <input type="text" name="senderAddressZone" id="senderAddressZone" formControlName="senderAddressZone" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderCity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender address zone</label>
+            <input type="text" name="senderCity" id="senderCity" formControlName="senderCity" placeholder="Zona de dirección del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderCountryName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name of the sender's country</label>
+            <input type="text" name="senderCountryName" id="senderCountryName" formControlName="senderCountryName" placeholder="Nombre del país del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderCountryCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender country code</label>
+            <input type="text" name="senderCountryCode" id="senderCountryCode" formControlName="senderCountryCode" placeholder="Código de país del remitente" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="orderingAccount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ordering Account</label>
+            <input type="text" name="orderingAccount" id="orderingAccount" formControlName="orderingAccount" placeholder="Ordenar cuenta" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="orderingName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ordering Name</label>
+            <input type="text" name="orderingName" id="orderingName" formControlName="orderingName" placeholder="nombre De Ordenamiento" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="intermediateBankId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Intermediate Bank ID</label>
+            <input type="text" name="intermediateBankId" id="intermediateBankId" formControlName="intermediateBankId" placeholder="Id. del banco intermedio" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="intermediateBankName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name Intermediate Bank</label>
+            <input type="text" name="intermediateBankName" id="intermediateBankName" formControlName="intermediateBankName" placeholder="Nombre Banco Intermedio" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="intermediateBankAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Intermediate bank address</label>
+            <input type="text" name="intermediateBankAddress" id="intermediateBankAddress" formControlName="intermediateBankAddress" placeholder="Dirección bancaria intermedia" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="intermediateBankStreet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Street Bank Intermediate</label>
+            <input type="text" name="intermediateBankStreet" id="intermediateBankStreet" formControlName="intermediateBankStreet" placeholder="Calle Banco Intermedio" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+        
+        <div>
+            <label for="correspondentBankId" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correspondent Bank Id</label>
+            <input type="text" name="correspondentBankId" id="correspondentBankId" formControlName="correspondentBankId" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="correspondentBankName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correspondent Bank Name</label>
+            <input type="text" name="correspondentBankName" id="correspondentBankName" formControlName="correspondentBankName" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="correspondentBankLocation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correspondent Bank Location</label>
+            <input type="text" name="correspondentBankLocation" id="correspondentBankLocation" formControlName="correspondentBankLocation" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryAccount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Account</label>
+            <input type="text" name="beneficiaryAccount" id="beneficiaryAccount" formControlName="beneficiaryAccount" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Name</label>
+            <input type="text" name="beneficiaryName" id="beneficiaryName" formControlName="beneficiaryName" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryMainAddress" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Main Address</label>
+            <input type="text" name="beneficiaryMainAddress" id="beneficiaryMainAddress" formControlName="beneficiaryMainAddress" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryAddressStreet" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Address Street</label>
+            <input type="text" name="beneficiaryAddressStreet" id="beneficiaryAddressStreet" formControlName="beneficiaryAddressStreet" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryAddressZone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Address Zone</label>
+            <input type="text" name="beneficiaryAddressZone" id="beneficiaryAddressZone" formControlName="beneficiaryAddressZone" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryCity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Address City</label>
+            <input type="text" name="beneficiaryCity" id="beneficiaryCity" formControlName="beneficiaryCity" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryCountryName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Country Name</label>
+            <input type="text" name="beneficiaryCountryName" id="beneficiaryCountryName" formControlName="beneficiaryCountryName" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="beneficiaryCountryCode" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Beneficiary Country Code</label>
+            <input type="text" name="beneficiaryCountryCode" id="beneficiaryCountryCode" formControlName="beneficiaryCountryCode" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="senderShortName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Sender Short Name</label>
+            <input type="text" name="senderShortName" id="senderShortName" formControlName="senderShortName" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="mainReference" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Main Reference</label>
+            <input type="text" name="mainReference" id="mainReference" formControlName="mainReference" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="accountType" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Account Type</label>
+            <input type="text" name=" " id="accountType" formControlName="accountType" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <div>
+            <label for="detailsCommission" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Details Commission</label>
+            <input type="text" name="detailsCommission" id="detailsCommission" formControlName="detailsCommission" placeholder="" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  >
+        </div>
+
+        <button  type="submit" class="w-full text-white bg-primary-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-primary-800">Guardar</button>
+    </form>
+</section>
+
